@@ -26,7 +26,7 @@ export default class GameScene extends Phaser.Scene {
     preload() {
         console.log('Preloading assets for GameScene');
         this.load.image('pongBat', 'assets/pongbat.png');
-        this.load.image('pongBall', 'assets/pongBall.png');
+        this.load.image('pongBall', 'assets/pongball.png');
     };
 
     
