@@ -19,7 +19,6 @@ export default class MenuScene extends Phaser.Scene {
     preload() {
         console.log('Preloading assets for MenuScene');
         this.load.image('menuBackground', 'assets/gameStart.png');
-        this.load.image('menuPongBat', 'assets/pongBatMenuDisply.png');
     }
 
     // Create game objects and set up the scene here
@@ -27,11 +26,6 @@ export default class MenuScene extends Phaser.Scene {
         //adds background
         this.menuBackground = this.add.sprite(1900/2, 850/2, 'menuBackground').setOrigin(0.5, 0.5);
         this.menuBackground.setScale(1.5, 0.85);
-
-        pong bat animation
-        this.pongBat1 = this.physics.add.sprite(450, 200, 'menuPongBat').setScale(0.75, 0.25)
-        this.pongBat2 = this.physics.add.sprite(800, 200, 'menuPongBat').setScale(0.75, 0.25)
-
 
         //starts the game
         this.startText = this.add.text(450, 300, 'Start Game', this.menuTextStyle).setOrigin(0, 0);
@@ -77,22 +71,7 @@ export default class MenuScene extends Phaser.Scene {
         })
     }
     update(time, delta) {
-        this.moveTimer += delta;
-        if(this.moveTimer >= 1000){
-            if(!this.moveBat){
-            this.pongBat1.y += 1;
-            if(this.pongBat1.y > 220){
-                this.pongBat1.y = 220;
-                this.moveBat = true;
-            }
-        }
-        else{
-                this.pongBat1.y -= 1;
-                if(this.pongBat1.y <= 180){
-                    this.pongBat1.y = 180;
-                    this.moveBat = false;
-                }
-            }}
+      
     }
 }
 
