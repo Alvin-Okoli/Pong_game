@@ -36,12 +36,6 @@ export default class GameScene extends Phaser.Scene {
 
     preload() {
         console.log('Preloading assets for GameScene');
-        this.load.image('pongBat', 'assets/pongbat.png');
-        this.load.image('pongBall', 'assets/pongball.png');
-        this.load.audio('ballhit', 'assets/ballhit.wav');
-        this.load.audio('loseLive', 'assets/liveloss.wav');
-        this.load.audio('gameover', 'assets/gameover.wav');
-        this.load.audio('bgm', 'assets/gamemusic.wav')
     };
 
     
