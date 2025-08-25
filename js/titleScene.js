@@ -26,6 +26,7 @@ export default class TitleScene extends Phaser.Scene {
     create() {
         this.titleBackground = this.add.sprite(450/2, 850/2, 'titleBackground')
         this.titleBackground.setScale(0.5, 0.8); 
+        this.scene.start('menuScene');
     }
 
     // Update game logic each frame here
