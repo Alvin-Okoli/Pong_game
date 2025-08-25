@@ -22,8 +22,8 @@ export default class MenuScene extends Phaser.Scene {
     // Create game objects and set up the scene here
     create() {
         //adds background
-        this.menuBackground = this.add.sprite(450/2, 850/2, 'menuBackground').setOrigin(0.5, 0.5);
-        this.menuBackground.setScale(0.5, 0.9);
+        this.menuBackground = this.add.sprite(450/2, 850/2, 'menuBackground').setOrigin(0.6, 0.5);
+        this.menuBackground.setScale(0.6, 0.9);
 
         //starts the game
         this.startText = this.add.text(40, 400, 'Start Game', this.menuTextStyle).setOrigin(0, 0);
