@@ -17,7 +17,7 @@ export const config = {
             debug: true,
         },
     },
-    scene: [  MenuScene, GameScene, LevelSene  ],
+    scene: [  DevinScene, TitleScene, MenuScene, GameScene, LevelSene  ],
     scale: {
         mode: Phaser.Scale.FIT,
         autoCenter: Phaser.Scale.CENTER_BOTH,
