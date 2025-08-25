@@ -25,7 +25,6 @@ export default class MenuScene extends Phaser.Scene {
         this.menuBackground = this.add.sprite(450/2, 850/2, 'menuBackground').setOrigin(0.5, 0.5);
         this.menuBackground.setScale(0.5, 0.9);
 
-
         //starts the game
         this.startText = this.add.text(40, 400, 'Start Game', this.menuTextStyle).setOrigin(0, 0);
         this.startText.setInteractive({useHandCursor: true});
@@ -73,7 +72,6 @@ export default class MenuScene extends Phaser.Scene {
         })
     }
     update(time, delta) {
-        
     }
 }
 
