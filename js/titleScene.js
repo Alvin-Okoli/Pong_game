@@ -7,7 +7,7 @@ export default class TitleScene extends Phaser.Scene {
 
     // Initialization code here
     init() {
-        this.cameras.main.setBackgroundColor('#ffffff');
+        this.cameras.main.setBackgroundColor('#000000');
     }
 
     // Preload assets here
@@ -18,8 +18,8 @@ export default class TitleScene extends Phaser.Scene {
 
     // Create game objects and set up the scene here
     create() {
-        this.titleBackground = this.add.sprite(1920/2, 1080/2, 'titleBackground').setOrigin(0.5, 0.5);
-        this.titleBackground.setScale(1.5); 
+        this.titleBackground = this.add.sprite(450/2, 850/2, 'titleBackground')
+        this.titleBackground.setScale(0.5, 0.8); 
     }
 
     // Update game logic each frame here
@@ -27,6 +27,5 @@ export default class TitleScene extends Phaser.Scene {
         if (time > 8000) {
             this.scene.start('menuScene');
         }
-        
     }
 }

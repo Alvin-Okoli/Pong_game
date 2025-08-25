@@ -4,95 +4,76 @@ export default class MenuScene extends Phaser.Scene {
     constructor() {
         super({key: 'menuScene'})
         this.startText = null;
-        this.menuTextStyle = { fontSize: '50px', fill: '#ffffff', align: 'center' };
-        this.exitTextStyle = { fontSize: '50px', fill: '#ff3131', align: 'center' };
-        this.moveBat = false;
-        this.moveTimer = 0;
+        this.menuTextStyle = { fontSize: '30px', fill: '#ffffff', align: 'center' };
+        this.exitTextStyle = { fontSize: '30px', fill: '#ff3131', align: 'center' };
     }
 
-    // Initialization code here
-    init() {
-        this.cameras.main.setBackgroundColor('#000000');
-    }
+    // // Initialization code here
+    // init() {
+    //     this.cameras.main.setBackgroundColor('#000000');
+    // }
 
     // Preload assets here
     preload() {
         console.log('Preloading assets for MenuScene');
         this.load.image('menuBackground', 'assets/gameStart.png');
-        this.load.image('pongBat', 'assets/pongBatMenuDisply.png');
     }
 
     // Create game objects and set up the scene here
     create() {
         //adds background
-        this.menuBackground = this.add.sprite(1900/2, 850/2, 'menuBackground').setOrigin(0.5, 0.5);
-        this.menuBackground.setScale(1.5, 0.85);
-
-        //pong bat animation
-        this.pongBat1 = this.physics.add.sprite(450, 200, 'pongBat').setScale(0.75, 0.25)
-        this.pongBat2 = this.physics.add.sprite(800, 200, 'pongBat').setScale(0.75, 0.25)
+        this.menuBackground = this.add.sprite(450/2, 850/2, 'menuBackground').setOrigin(0.5, 0.5);
+        this.menuBackground.setScale(0.5, 0.9);
 
 
         //starts the game
-        this.startText = this.add.text(450, 300, 'Start Game', this.menuTextStyle).setOrigin(0, 0);
+        this.startText = this.add.text(40, 400, 'Start Game', this.menuTextStyle).setOrigin(0, 0);
         this.startText.setInteractive({useHandCursor: true});
         this.startText.on('pointerover', () => {
-            this.startText.setStyle({ fill: '#ffff00', fontSize: '65px' });
+            this.startText.setStyle({ fill: '#28de18ff', fontSize: '35px' });
         });
         this.startText.on('pointerout', () => {
-            this.startText.setStyle({ fontSize: '50px', fill: '#ffffff' });
+            this.startText.setStyle(this.menuTextStyle);
         });
         this.startText.on('pointerup', () => {
             this.scene.start('gameScene');
         });
 
         //level select setup
-        this.levelText = this.add.text(450, 400, 'Select Level', this.menuTextStyle).setOrigin(0, 0);
+        this.levelText = this.add.text(40, 450, 'Difficulty', this.menuTextStyle).setOrigin(0, 0);
         this.levelText.setInteractive({useHandCursor: true});
         this.levelText.on('pointerover', () => {
-            this.levelText.setStyle({ fill: '#ffff00', fontSize: '65px' });
+            this.levelText.setStyle({ fill: '#ffff00', fontSize: '35px' });
         });
         this.levelText.on('pointerout', () => {
-            this.levelText.setStyle({ fontSize: '50px', fill: '#ffffff' });
+            this.levelText.setStyle(this.menuTextStyle);
         });
+        // this.levelText.on('pointerup', () => {
+        //     this.scene.start('levelScene');
+        // });
 
         //high score setup
-        this.highScoreText = this.add.text(450, 500, 'High Scores', this.menuTextStyle).setOrigin(0, 0);
+        this.highScoreText = this.add.text(38, 500, 'Top Score', this.menuTextStyle).setOrigin(0, 0);
         this.highScoreText.setInteractive({useHandCursor: true});
         this.highScoreText.on('pointerover', () => {
-            this.highScoreText.setStyle({ fill: '#ffff00', fontSize: '65px' });
+            this.highScoreText.setStyle({ fill: '#ffff00', fontSize: '35px' });
         });
         this.highScoreText.on('pointerout', () => {
-            this.highScoreText.setStyle({ fontSize: '50px', fill: '#ffffff' });
+            this.highScoreText.setStyle(this.menuTextStyle);
         });
         
         //exit game setup
-        this.exitText = this.add.text(450, 600, 'Exit Game', this.exitTextStyle).setOrigin(0, 0);
+        this.exitText = this.add.text(40, 550, 'Exit Game', this.exitTextStyle).setOrigin(0, 0);
         this.exitText.setInteractive({useHandCursor: true});
         this.exitText.on('pointerover', ()=>{
-            this.exitText.setStyle({ fontSize: '65px' });
+            this.exitText.setStyle({ fontSize: '35px' });
         })
         this.exitText.on('pointerout', ()=>{
-            this.exitText.setStyle({ fontSize: '50px' });
+            this.exitText.setStyle(this.exitTextStyle);
         })
     }
     update(time, delta) {
-        this.moveTimer += delta;
-        if(this.moveTimer >= 1000){
-            if(!this.moveBat){
-            this.pongBat1.y += 1;
-            if(this.pongBat1.y > 220){
-                this.pongBat1.y = 220;
-                this.moveBat = true;
-            }
-        }
-        else{
-                this.pongBat1.y -= 1;
-                if(this.pongBat1.y <= 180){
-                    this.pongBat1.y = 180;
-                    this.moveBat = false;
-                }
-            }}
+        
     }
 }
 

@@ -4,10 +4,11 @@ import GameScene from './gameScene.js';
 import DevinScene from './devinScene.js';
 import TitleScene from './titleScene.js';
 import MenuScene from './menuScene.js';
+import LevelSene from './levelscene.js';
 
 export const config = {
     type: Phaser.AUTO,
-    width: 1900, 
+    width: 450, 
     height: 850,
     backgroundColor: '#000000', 
     physics: {
@@ -16,13 +17,11 @@ export const config = {
             debug: true,
         },
     },
-    scene: [ DevinScene, TitleScene, MenuScene, GameScene ],
+    scene: [  MenuScene, GameScene, LevelSene  ],
     scale: {
         mode: Phaser.Scale.FIT,
         autoCenter: Phaser.Scale.CENTER_BOTH,
     },
 }
-
-document.addEventListener('DOMContentLoaded', () => {
     const game = new Phaser.Game(config);
-});
+// 
