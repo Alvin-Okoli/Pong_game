@@ -20,7 +20,7 @@ export const config = {
     scene: [  DevinScene, TitleScene, MenuScene, GameScene, LevelSene  ],
     scale: {
         mode: Phaser.Scale.FIT,
-        autoCenter: Phaser.Scale.CENTER_BOTH,
+        autoCenter: Phaser.Scale.CENTER_HORIZONTALLY,
     },
 }
     const game = new Phaser.Game(config);
