@@ -14,6 +14,12 @@ export default class TitleScene extends Phaser.Scene {
     preload() {
         console.log('Preloading assets for TitleScene');
         this.load.image('titleBackground', 'assets/title.jpg');
+        this.load.image('pongBat', 'assets/pongbat.png');
+        this.load.image('pongBall', 'assets/pongball.png');
+        this.load.audio('ballhit', 'assets/ballhit.wav');
+        this.load.audio('loseLive', 'assets/liveloss.wav');
+        this.load.audio('gameover', 'assets/gameover.wav');
+        this.load.audio('bgm', 'assets/gamemusic.wav')
     }
 
     // Create game objects and set up the scene here
