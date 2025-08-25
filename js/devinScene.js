@@ -19,7 +19,7 @@ export default class DevinScene extends Phaser.Scene {
 
     // Create game objects and set up the scene here
     create() {
-        this.devinBackground = this.add.sprite(400/2, 850/2, 'devinBackground').setScale(0.4)
+        this.devinBackground = this.add.sprite(400/2, 800/2, 'devinBackground').setScale(0.4)
     }
 
     // Update game logic each frame here
